@@ -2,7 +2,7 @@ package codility;
 
 import java.util.stream.IntStream;
 
-public class EquilibriumIndex {
+class EquilibriumIndex {
     /**
      * O(N) solution for Equilibrium Task on Codility
      *
@@ -10,7 +10,7 @@ public class EquilibriumIndex {
      * @param numbers array of integers
      * @return the index of the equilibrium or -1
      */
-    public int computeIndex(int[] numbers) {
+    int computeIndex(int[] numbers) {
         if (numbers != null) {
             int leftsum = 0;
             int rightsum = IntStream.of(numbers).sum();
