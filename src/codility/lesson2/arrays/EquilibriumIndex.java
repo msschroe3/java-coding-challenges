@@ -1,4 +1,4 @@
-package codility;
+package codility.lesson2.arrays;
 
 import java.util.stream.IntStream;
 

@@ -1,4 +1,4 @@
-package codility;
+package codility.lesson2.arrays;
 
 class CyclicRotation {
     int[] solution(int[] A, int K) {

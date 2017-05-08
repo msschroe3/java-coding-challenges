@@ -1,4 +1,4 @@
-package codility;
+package codility.lesson1.iterations;
 
 class BinaryGap {
 

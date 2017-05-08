@@ -1,4 +1,4 @@
-package codility;
+package codility.lesson1.iterations;
 
 import org.junit.Before;
 import org.junit.Test;

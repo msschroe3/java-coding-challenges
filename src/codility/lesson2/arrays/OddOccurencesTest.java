@@ -1,4 +1,4 @@
-package codility;
+package codility.lesson2.arrays;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -11,7 +11,7 @@ import java.util.Collection;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class EquilibriumIndexTest {
+public class OddOccurencesTest {
 
     /*************************
      * Parameterized Test Data
@@ -20,11 +20,11 @@ public class EquilibriumIndexTest {
     @Parameterized.Parameters(name = "Test {index}: {0}")
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
-                // test case message    |   testArray                   |   expectedIndex
-                { "equi index found",       new int[]{-4, 10, -4, 4, 2},    2 },
-                { "equi index not found",   new int[]{-4, 10, -3, 40, 2},   -1 },
-                { "empty array returns -1", new int[]{},                    -1 },
-                { "null param returns -1",  null,                           -1 }
+                // test case message            |   testArray                                   |   result
+                { "array with 1 odd occurence",     new int[] {9,3,9,3,9,7,9},                      7 },
+                { "test int bounds",                new int[] {1,1,1000000,1000000,1000000000},     1000000000 },
+                { "test array with 1 element",      new int[] {13},                                 13 }
+                // add performance tests that hit the upper bound limit of the array
         });
     }
 
@@ -35,25 +35,25 @@ public class EquilibriumIndexTest {
     public int[] testArray;
 
     @Parameterized.Parameter(2)
-    public int expectedIndex;
+    public int expected;
 
     /**********************
      * Parameterized Tests
      **********************/
 
-    private EquilibriumIndex equi;
+    private OddOccurences oddOccurences;
 
     @Before
     public void setup() {
-        this.equi = new EquilibriumIndex();
+        this.oddOccurences = new OddOccurences();
     }
 
     @Test
-    public void equiTests() {
+    public void oddOccurencesTests() {
         // when
-        int index = this.equi.computeIndex(testArray);
+        int result = this.oddOccurences.solution(testArray);
 
         // then
-        assertEquals(expectedIndex, index);
+        assertEquals(expected, result);
     }
 }
